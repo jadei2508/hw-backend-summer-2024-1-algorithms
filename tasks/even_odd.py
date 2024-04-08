@@ -9,4 +9,19 @@ def even_odd(numbers: list[int]) -> float:
         >> even_odd([1, 2, 3, 4, 5])
         0.6667
     """
-    raise NotImplementedError
+    evenSum = 0
+    oddSum = 0
+    try:
+        if arr.count == 0:
+            return 0;
+ 
+        for i in arr:
+            if i % 2:
+                evenSum += i
+            else:
+                oddSum += i
+    except ZeroDivisionError:
+        return 0
+    if oddSum == 0:
+        return 0
+    return evenSum / oddSum

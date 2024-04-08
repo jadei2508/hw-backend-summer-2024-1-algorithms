@@ -32,7 +32,24 @@ class Graph:
         self._root = root
 
     def dfs(self) -> list[Node]:
-        raise NotImplementedError
+                visited = set()
+        res = []
+        st = [self._root]
+        while st:
+            v = st.pop()
+            if v not in visited:
+                visited.add(v)
+                res.append(v)
+                st.extend(reversed(v.outbound))
+        return res
 
     def bfs(self) -> list[Node]:
-        raise NotImplementedError
+                res, q = [], collections.deque([self._root])
+        res.append(self._root)
+        while q:
+            v = q.popleft()
+            for i in v.outbound:
+                if i not in res:
+                    res.append(i)
+                    q.append(i)
+        return res

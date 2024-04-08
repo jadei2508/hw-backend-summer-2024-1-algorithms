@@ -12,4 +12,10 @@ def is_prime(number: int) -> bool:
         >> is_prime(4):
         True
     """
-    raise NotImplementedError
+    import math
+    if number > 1:
+        for i in range(2, int(math.sqrt(number)) + 1):
+            if (number % i) == 0:
+                return False
+        return True
+    return False
