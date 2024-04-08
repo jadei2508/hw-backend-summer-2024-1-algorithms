@@ -16,6 +16,6 @@ def find_shortest_longest_word(text: str) -> tuple[str, str] | tuple[None, None]
     """
     array = [i.strip() for i in text.split()]
     if array:
-        return (min(array, key=len), max(array, key=len))
+        return min(array, key=len), max(array, key=len)
     else:
-        return (None, None)
+        return None, None

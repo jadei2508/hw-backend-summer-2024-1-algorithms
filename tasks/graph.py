@@ -1,4 +1,5 @@
-from typing import TypeVar, Generic
+from typing import TypeVar, Generic, Any
+import collections
 
 __all__ = ("Node", "Graph")
 
@@ -32,7 +33,7 @@ class Graph:
         self._root = root
 
     def dfs(self) -> list[Node]:
-                visited = set()
+        visited = set()
         res = []
         st = [self._root]
         while st:
@@ -44,7 +45,7 @@ class Graph:
         return res
 
     def bfs(self) -> list[Node]:
-                res, q = [], collections.deque([self._root])
+        res, q = [], collections.deque([self._root])
         res.append(self._root)
         while q:
             v = q.popleft()

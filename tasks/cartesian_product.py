@@ -1,4 +1,5 @@
 from typing import TypeVar
+from typing import Any
 
 __all__ = ("cartesian_product",)
 
