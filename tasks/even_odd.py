@@ -12,10 +12,10 @@ def even_odd(numbers: list[int]) -> float:
     evenSum = 0
     oddSum = 0
     try:
-        if arr.count == 0:
+        if numbers.count == 0:
             return 0;
- 
-        for i in arr:
+
+        for i in numbers:
             if i % 2:
                 evenSum += i
             else:
